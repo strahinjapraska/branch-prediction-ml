@@ -1,5 +1,4 @@
-To get data needed to test the perceptron prediction
-
+To get the data needed to test the perceptron prediction:
 ```bash
 python3 -m pip install kaggle
 
