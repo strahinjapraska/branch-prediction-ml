@@ -2,7 +2,7 @@ use plotters::{backend::BitMapBackend, chart::ChartBuilder, drawing::IntoDrawing
 use std::error::Error;
 
 pub fn plot_results(data: Vec<f64>) -> Result<(), Box<dyn Error>> {
-    let out_file_name = "histogram.png";
+    let out_file_name = "data/histogram.png";
     let root = BitMapBackend::new(out_file_name, (1280, 720)).into_drawing_area();
 
     root.fill(&WHITE)?;
