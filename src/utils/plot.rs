@@ -55,7 +55,7 @@ pub fn plot_series(data: HashMap<&str, Vec<u32>>) -> Result<(), Box<dyn Error>>{
         .y_label_area_size(30)
         .build_cartesian_2d(0..x_max, y_min..y_max)?;
 
-    chart.configure_mesh().draw()?;
+    chart.configure_mesh().draw()?; 
 
     // Define colors
     let colors = vec![&RED, &BLUE, &GREEN, &MAGENTA, &CYAN, &BLACK];
