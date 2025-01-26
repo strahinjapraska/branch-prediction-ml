@@ -132,6 +132,9 @@ Although comparing rust to python is not fair, perceptron took 10 seconds to go 
 
 ## 5. Resources 
 [Dynamic Branch Prediction with Perceptrons, Daniel A. Jimenez, Calvin Lin](https://www.cs.utexas.edu/~lin/papers/hpca01.pdf)
+
 [Kaggle dataset](https://www.kaggle.com/datasets/dmitryshkadarevich/branch-prediction)
+
 [Branch predictor Wikipedia article](https://en.wikipedia.org/wiki/Branch_predictor)
+
 [HIGH PERFORMANCE COMPUTING, L10, Lecture notes](https://web.archive.org/web/20131227033204/http://hpc.serc.iisc.ernet.in/~govind/hpc/L10-Pipeline.txt)
