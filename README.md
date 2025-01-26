@@ -10,3 +10,5 @@ rm branch-prediction.zip
 
 python3 clear_data.py
 ```
+
+To see documentation in details visit [docs](docs/README.md)
