@@ -14,7 +14,7 @@ There are 5 stages in pipelined RISC processor:
 Each of stages in pipeline has it's corresponding register that passes data from one stage to another.
 
 In non-pipelined version we would have this situation:
-![[no-pipeline.png]]
+![[pics/no-pipeline.png]]
 
 It would take $5n$ cycles to run $n$ instructions because each instruction would wait for previous to complete. The hardware that corresponds to different stage would have to wait for the remaining cycle to end.
 
