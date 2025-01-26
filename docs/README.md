@@ -14,12 +14,15 @@ There are 5 stages in pipelined RISC processor:
 Each of stages in pipeline has it's corresponding register that passes data from one stage to another.
 
 In non-pipelined version we would have this situation:
-![[pics/no-pipeline.png]]
+
+![No Pipeline](pics/no-pipeline.png)
 
 It would take $5n$ cycles to run $n$ instructions because each instruction would wait for previous to complete. The hardware that corresponds to different stage would have to wait for the remaining cycle to end.
 
 Pipelined:
-![[pipeline.png]]
+
+![Pipeline](pics/pipeline.png)
+
 Throughput is 1 instruction per cycle now, we still deal with one instruction in 5 cycles but throughput is increased, we can process more instructions.
 
 We could potentially extend the pipeline, and get even more benefits, but mispredictions would cost us more. 
@@ -40,7 +43,7 @@ We use a single-layer perceptron consisting of one artificial neuron connecting 
 
 A perceptron learns a target boolean function $t = (x_1, x_2, ..., x_n)$ of $n$ inputs. In our case $x_i$ will be bits of global branch history register where a perceptron keeps track of positive and negative correlations between branch outcomes and target boolean function $t$ will be whether branch is taken or not.
 
-![[perceptron.png]]
+![Perceptron](pics/perceptron.png)
 
 ### 3.2 Training 
 We represent perceptron by a vector of weights(signed integers).
@@ -70,11 +73,13 @@ is a hyperplane(in 2-dimensional space, a line) diving the space into the set of
 Boolean function $t = (x_1, ..., x_n)$ is linearly separable iff there exist values for $w_0,...,w_n$ such that all true instances can be separated from all the false instance by hyperplane.
 
 Only linearly separable functions can be quintessentially, XOR cannot be separated, while AND can. 
-![[separability.png]]
+![Separability](pics/separability.png)
 
 ### 3.4 Constructing branch predictor 
 Construction below is the branch predictor.
-![[construction.png]]
+
+![Construction](pics/construction.png)
+
 The CPU keeps a table of $N$ perceptrons in fast SRAM, N is determined by number of weights that is determined by length§ of history. 
 
 The high level description of how predictor works: 
@@ -104,9 +109,9 @@ Prediction rates for each of datasets:
 |S02.csv|94.92|20331|
 |S04.csv|95.49|18030|
 
-![[histogram.png]]
+![Histogram](pics/histogram.png)
 
-![[series.png]]
+![Series](pics/series.png)
 
 ### 4.3 Logistic Regression 
 Another algorithm to try is the logistic regression(modified for online learning) to compare the results to perceptron, designed in python.
@@ -123,7 +128,7 @@ Although comparing rust to python is not fair, perceptron took 10 seconds to go 
 | S02.csv    | 98.65              | 5413          |
 | S04.csv    | 91.00              | 35999         |
 
-![[comparison.png]]
+![Comparison](pics/comparison.png)
 
 ## 5. Resources 
 [Dynamic Branch Prediction with Perceptrons, Daniel A. Jimenez, Calvin Lin](https://www.cs.utexas.edu/~lin/papers/hpca01.pdf)
